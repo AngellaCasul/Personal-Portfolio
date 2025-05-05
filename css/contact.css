@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Page transition effect */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation only to the content */
+.content {
+    animation: fadeSlideUp 0.4s ease-in-out;
+    max-width: 700px; /* Adjust max-width */
+    margin: 0 auto; /* Reduced top margin to 0 */
+    padding: 30px; /* Increased padding */
+    text-align: center;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: rgb(255, 223, 183);
+    /* Make sure this path is correct relative to the CSS file's location */
+    background: url('../images/aspen-lake-pixel-moewalls-com.gif') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px; /* Base padding */
+    font-size: 20px; /* Base font size */
+    color: rgb(255, 255, 255); /* Text color for body */
+    margin: 0; /* Remove default body margin */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding-top: 60px; /* Add padding for fixed nav */
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px; /* Adjust heading size */
+    text-transform: uppercase;
+    margin-top: 40px; /* Base top margin */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1),
+                -3px -3px 6px rgba(0, 0, 0, 1);
+    color: white; /* Ensure heading color is white */
+    margin-bottom: 20px;
+}
+
+/* Navigation Menu */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove bottom margin */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0; /* Remove border-radius for fixed nav */
+    overflow: hidden;
+    position: fixed; /* Make it fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure it stays on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px; /* Consistent font size with other pages */
+}
+
+li {
+    margin: 0 20px;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1em; /* Inherit font size */
+}
+
+li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f8e58c;
+}
+
+/* Paragraph Styling */
+p {
+    /* Semi-transparent dark background */
+    background-color: rgba(51, 51, 51, 0.8);
+    /* Adjust the width of the background */
+    width: 400px; /* Base width */
+    line-height: 1.6;
+    /* Center the paragraph */
+    margin: 15px auto;
+    padding: 15px; /* Base padding */
+    border-radius: 8px;
+    color: white; /* Ensure paragraph text is white */
+    text-align: center; /* Center the text */
+    box-sizing: border-box; /* Include padding in width */
+    max-width: 90%; /* Ensure paragraph doesn't exceed container width */
+}
+
+/* Contact Options */
+.contact-options {
+    background: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.contact-options a {
+    color: #f8e58c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-options a:hover {
+    color: white;
+}
+
+.contact-options i {
+    margin-right: 10px;
+    color: #f8e58c;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+    /* Solid Background (Less Transparency) */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    color: #333; /* Dark text for better contrast */
+    padding: 40px; /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    max-width: 500px; /* Adjust form width */
+    text-align: left;
+}
+
+.contact-form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 22px;
+    color: #333; /* Dark heading for better contrast */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555; /* Slightly darker label */
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #f8e58c;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 12px;
+    border: 1px solid #ccc; /* Solid border */
+    border-radius: 6px;
+    background-color: white; /* Solid white background for inputs */
+    color: #333;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f8e58c;
+    box-shadow: 0 0 8px rgba(248, 229, 140, 0.5);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #f8e58c;
+    color: #333;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e0c45b;
+}
+
+/* -------------------- Responsive Design (Mobile-Friendly) -------------------- */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px; /* Reduce body padding */
+        font-size: 18px; /* Slightly reduce base font size */
+        padding-top: 50px; /* Adjust for fixed nav */
+    }
+
+    .content {
+        padding: 20px; /* Adjust content padding */
+        max-width: 95%; /* Allow content to take up more width */
+        margin-top: 50px; /* Adjust top margin for fixed nav */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce h1 font size */
+        margin-top: 20px; /* Reduce top margin for h1 */
+        margin-bottom: 15px;
+    }
+
+    /* Adjust Paragraph */
+    p {
+        width: auto; /* Allow paragraph width to be determined by container */
+        max-width: 100%; /* Ensure paragraph doesn't exceed container */
+        padding: 15px; /* Reduce paragraph padding */
+        margin: 15px auto; /* Adjust paragraph margin */
+        text-align: left; /* Align text to the left on smaller screens */
+    }
+
+    /* Adjust Navigation */
+    ul {
+        flex-direction: column; /* Stack navigation items */
+        align-items: center; /* Center stacked items */
+        border-radius: 0; /* Optional: remove border radius */
+        background-color: rgba(0, 0, 0, 0.7); /* Slightly different background */
+        width: 100%; /* Make navigation full width */
+        padding: 0; /* Remove horizontal padding */
+        margin-bottom: 0; /* Adjust margin for fixed nav */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    ul li {
+        margin: 5px 0; /* Adjust margin for stacked items */
+        width: 100%; /* Make list items full width */
+        text-align: center;
+    }
+
+    ul li a {
+        padding: 10px; /* Adjust link padding */
+    }
+
+    ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #f8e58c;
+    }
+
+    /* Adjust Contact Options */
+    .contact-options {
+        padding: 15px;
+        margin: 15px auto;
+        text-align: left;
+    }
+
+    .contact-options p {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust Contact Form */
+    .contact-form-container {
+        padding: 30px; /* Reduce form padding */
+        margin: 20px auto; /* Adjust form margin */
+        max-width: 95%; /* Allow form to take up more width */
+        width: 95%; /* Ensure percentage width is maintained */
+    }
+
+    .contact-form-container h2 {
+        font-size: 20px; /* Reduce form heading size */
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        margin-bottom: 6px;
+        font-size: 1em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    button[type="submit"] {
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+}
+
+/* Optional: Media query for even smaller screens (e.g., phones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px; /* Further reduce base font size */
+        padding-top: 55px; /* Adjust for even smaller screens */
+    }
+
+    .content {
+        margin-top: 55px; /* Adjust top margin for fixed nav */
+    }
+
+    h1 {
+        font-size: 22px; /* Further reduce h1 size */
+    }
+
+    /* Adjust Paragraph */
+    p {
+        padding: 10px; /* Further reduce paragraph padding */
+        margin: 10px auto; /* Further adjust paragraph margin */
+    }
+
+    /* Adjust Contact Options */
+    .contact-options {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .contact-options i {
+        margin-right: 8px;
+    }
+
+    /* Adjust Contact Form */
+    .contact-form-container {
+        padding: 20px; /* Further reduce form padding */
+        margin: 15px auto; /* Further adjust form margin */
+    }
+
+    .contact-form-container h2 {
+        font-size: 18px; /* Further reduce form heading size */
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    button[type="submit"] {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    ul {
+        font-size: 14px; /* Adjust font size for even smaller screens */
+    }
+}
