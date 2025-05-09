@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacts</title>
+  <link rel="stylesheet" href="css/contact.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="About.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="content">
-        <h1>Get In Touch</h1>
-        <p>I'm always happy to connect! Feel free to use the form below or reach out through these other channels:</p>
+  <ul>
+    <li><a href="portfolio.html">Home</a></li>
+    <li><a href="About.html">About Me</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 
-        <div class="contact-options">
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:casulangella@gmail.com">casulangella@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> <a href="[YOUR_LINKEDIN_URL]" target="_blank">LinkedIn</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/AngellaCasul" target="_blank">GitHub</a></p>
-            </div>
+  <div class="content">
+    <h1>Get In Touch</h1>
+    <p>
+      I'm always happy to connect! Feel free to use the form below or reach out through these other channels:
+    </p>
 
-        <div class="contact-form-container">
-            <h2>Contact Form</h2>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name"><i class="fas fa-user"></i> Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit">SEND MESSAGE</button>
-            </form>
-        </div>
+    <div class="contact-options">
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:casulangella@gmail.com">casulangella@gmail.com</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="[YOUR_LINKEDIN_URL]" target="_blank">LinkedIn</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/AngellaCasul" target="_blank">GitHub</a></p>
     </div>
+
+    <div class="contact-form-container">
+      <h2>Contact Form</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("Dm0ysegWKzVF0BmTY"); // Replace with your actual public key from EmailJS
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_k1240kt", "template_mk49woh", this)
+        .then(function () {
+          alert("Thank you! Your message has been sent.");
+          document.getElementById("contact-form").reset();
+        }, function (error) {
+          alert("Oops! Something went wrong.\n" + JSON.stringify(error));
+        });
+    });
+  </script>
 </body>
 </html>
